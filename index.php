@@ -4,6 +4,9 @@ $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, perf
 
 $words_array = explode(" ", $text);
 
+
+
+//this works
 $badword = $_GET["badword"];
 
 $edited_text = str_replace($badword, '***', $text);
@@ -22,6 +25,16 @@ $edited_text = str_replace($badword, '***', $text);
 </head>
 <body>
     <p> <?php echo $edited_text ?> </p>
+    
+    
+
+    <!-- this works too -->
+    <!-- <p>
+        <?php 
+            // echo str_replace($_GET["badword"], '***', $text) 
+        ?> 
+    </p> -->
+
     <p>This paragraph is made of <?php echo count($words_array) ?> words and <?php echo strlen($text) ?> characters.</p>
 </body>
 </html>
