@@ -1,6 +1,14 @@
 <?php
 
-$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, perferendis labore. Corporis, impedit qui earum fugit maiores consequuntur esse porro iusto iure omnis, ullam accusantium enim distinctio cupiditate, praesentium vero. Vitae totam eius sit quasi quae animi, libero tempore dignissimos officiis nam itaque dicta ipsum voluptatum quidem magnam fugit ratione eos!'
+$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, perferendis labore. Corporis, impedit qui earum fugit maiores consequuntur esse porro iusto iure omnis, ullam accusantium enim distinctio cupiditate, praesentium vero. Vitae totam eius sit quasi quae animi, libero tempore dignissimos officiis nam itaque dicta ipsum voluptatum quidem magnam fugit ratione eos!';
+
+$words_array = explode(" ", $text);
+
+$badword = $_GET["badword"];
+
+$edited_text = str_replace($badword, '***', $text);
+
+
 
 ?>
 
@@ -13,6 +21,7 @@ $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, perf
     <title>Document</title>
 </head>
 <body>
-    <p> <?php echo $text ?> </p>
+    <p> <?php echo $edited_text ?> </p>
+    <p>This paragraph is made of <?php echo count($words_array) ?> words and <?php echo strlen($text) ?> characters.</p>
 </body>
 </html>
